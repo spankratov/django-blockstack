@@ -94,6 +94,7 @@ ENV/
 # Django
 manage.py
 blockstack_auth_test
+static
 
 # db
 db.sqlite3
