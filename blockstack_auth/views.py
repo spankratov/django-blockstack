@@ -2,7 +2,8 @@
 from __future__ import unicode_literals
 
 from django.conf import settings
-from django.http import HttpResponse, JsonResponse
+from django.contrib.auth import authenticate, login
+from django.http import HttpResponse, JsonResponse, HttpResponseBadRequest
 from django.urls import reverse
 
 from blockchainauth import AuthRequest
@@ -23,7 +24,16 @@ def blockstack_request(request):
 
 
 def blockstack_response(request):
-    pass
+    auth_response_token = request.GET.get('authResponse')
+    if not auth_response_token:
+        return HttpResponseBadRequest('No authResponse parameter')
+    user = authenticate(request, auth_response_token=auth_response_token)
+    if user is not None:
+        login(request, user)
+    response = HttpResponse("", status=302)
+    response['Location'] = '{scheme}://{host}'.format(scheme=request.scheme,
+                                                      host=request.get_host())
+    return response
 
 
 def manifest(request):
