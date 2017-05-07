@@ -34,3 +34,9 @@ class BlockstackAuthBackend(object):
                         user.last_name = name[1]
                     user.save()
             return user
+
+    def get_user(self, user_id):
+        try:
+            return User.objects.get(pk=user_id)
+        except User.DoesNotExist:
+            return None
