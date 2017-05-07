@@ -48,5 +48,6 @@ Quick start
 5. Redirect user to '<your_domain_name>/blockstack/request' when he tries to authenticate.
 
 6. Get Blockstack profile of already authenticated users like this::
+
     >>> from blockstack_auth.profile import fetch_profile
     >>> fetch_profile(user.username)
