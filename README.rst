@@ -51,3 +51,5 @@ Quick start
 
     >>> from blockstack_auth.profile import fetch_profile
     >>> fetch_profile(user.username)
+
+You can see this app in action in this simple website: https://github.com/spankratov/django-blockstack-test
