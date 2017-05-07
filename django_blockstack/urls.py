@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.conf.urls import url
 
-from blockstack_auth import views
+from django_blockstack import views
 
 app_name = 'blockstack'
 

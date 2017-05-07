@@ -5,4 +5,4 @@ from django.apps import AppConfig
 
 
 class BlockstackAuthConfig(AppConfig):
-    name = 'blockstack_auth'
+    name = 'django_blockstack'

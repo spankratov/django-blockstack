@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from blockchainauth import AuthResponse
 from jwt import DecodeError
 
-from blockstack_auth.profile import fetch_profile
+from django_blockstack.profile import fetch_profile
 
 
 class BlockstackAuthBackend(object):
