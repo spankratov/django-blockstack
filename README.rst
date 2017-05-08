@@ -45,7 +45,7 @@ Quick start
 
     url(r'', include('django_blockstack.urls')),
 
-5. Redirect user to '<your_domain_name>/blockstack/request' when he tries to authenticate:
+5. Redirect user to '<your_domain_name>/blockstack/request' when he tries to authenticate::
 
     def login(request):
         ...
