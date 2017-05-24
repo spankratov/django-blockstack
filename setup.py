@@ -12,8 +12,7 @@ setup(
     version='0.1',
     packages=find_packages(),
     install_requires=[
-        'blockchainauth>=0.3.1',
-        'blockstack-profiles>=0.14.1',
+        'blockchainauth>=0.3.2',
         'django>=1.11'
         'PyJWT>=1.5.0',
     ],
