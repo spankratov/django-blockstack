@@ -7,17 +7,17 @@ This Django application enables Blockstack-based authentication for your website
 Quick start
 -----------
 
-1. Add "blockstack_auth" to your INSTALLED_APPS setting like this::
+1. Add "django_blockstack" to your INSTALLED_APPS setting like this::
 
     INSTALLED_APPS = [
         ...
-        'blockstack_auth',
+        'django_blockstack',
     ]
 
-2. Add "blockstack_auth.backends.BlockstackAuthBackend" to your AUTHENTICATION_BACKENDS setting like this::
+2. Add "django_blockstack.backends.BlockstackAuthBackend" to your AUTHENTICATION_BACKENDS setting like this::
 
     AUTHENTICATION_BACKENDS = [
-        'blockstack_auth.backends.BlockstackAuthBackend',
+        'django_blockstack.backends.BlockstackAuthBackend',
         ...
     ]
 
@@ -43,9 +43,13 @@ Quick start
 
 4. Include the blockstack_auth URLconf in your project urls.py like this::
 
-    url(r'^polls/', include('blockstack_auth.urls')),
+    url(r'', include('django_blockstack.urls')),
 
-5. Redirect user to '<your_domain_name>/blockstack/request' when he tries to authenticate.
+5. Redirect user to '<your_domain_name>/blockstack/request' when he tries to authenticate::
+
+    def login(request):
+        ...
+        return redirect('blockstack:request')
 
 6. Get Blockstack profile of already authenticated users like this::
 
